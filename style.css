@@ -1,61 +1,69 @@
-/* General Styles */
+/* General Layout */
 body {
-    font-family: 'Arial', sans-serif;
+    display: flex;
     margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    color: #333;
-    background: #ffffff;
-    text-align: center;
+    font-family: 'Arial', sans-serif;
+    background: #f8f9fa;
 }
 
-/* Header Styles */
-header {
-    padding: 40px;
+/* Sidebar (Left Profile Section) */
+.sidebar {
+    width: 280px;
+    background: white;
+    padding: 20px;
     text-align: center;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.profile-img {
-    width: 90px;  /* Adjusted size */
-    height: 90px;
+.sidebar .profile-img {
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     margin-bottom: 10px;
 }
 
-/* Navigation Bar */
-nav {
-    background: #f8f9fa;
-    padding: 10px;
+.sidebar .contact-info {
+    font-size: 14px;
+    color: #666;
 }
 
+.sidebar .social-links a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 5px;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 40px;
+}
+
+/* Navigation Bar */
 nav ul {
     list-style: none;
-    margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin-left: 20px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #007bff;
+    color: #333;
     font-weight: bold;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Section Styles */
+/* Sections */
 section {
-    margin: 20px auto;
+    margin-bottom: 40px;
+    background: white;
     padding: 20px;
-    max-width: 700px;
-    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Research Figure */
@@ -69,25 +77,9 @@ figure img {
     border-radius: 8px;
 }
 
-/* Gallery Styles */
-.gallery {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
+/* Gallery */
 .gallery img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
+    width: 80px;
+    height: 80px;
     border-radius: 8px;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 10px;
-    color: #6c757d;
-    font-size: 0.9em;
 }
