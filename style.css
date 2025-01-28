@@ -48,6 +48,13 @@ section {
     text-align: left;
 }
 
+/* Research Figure */
+.research-figure {
+    max-width: 80%; /* Adjust figure size to fit properly */
+    display: block;
+    margin: 15px auto;
+}
+
 /* Career List */
 .career-list {
     list-style-type: none;
