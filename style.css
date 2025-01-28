@@ -1,75 +1,57 @@
 /* General Layout */
 body {
-    display: flex;
-    margin: 0;
     font-family: 'Arial', sans-serif;
-    background: #f8f9fa;
-}
-
-/* Sidebar (Left Profile Section) */
-.sidebar {
-    width: 280px;
-    background: white;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5; /* 줄어든 라인 간격 */
+    color: #333;
+    background: #ffffff;
     text-align: center;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar .profile-img {
-    width: 120px;
-    height: 120px;
+/* Header Section */
+header {
+    padding: 10px 0; /* 줄어든 간격 */
+}
+
+.profile-img {
+    width: 160px;  /* 프로필 사진 크기 더 키움 */
+    height: 160px;
     border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.sidebar .contact-info {
-    font-size: 14px;
-    color: #666;
-}
-
-.sidebar .social-links a {
-    text-decoration: none;
-    color: #007bff;
-    margin: 5px;
-}
-
-/* Main Content */
-main {
-    flex: 1;
-    padding: 40px;
+    margin-bottom: 5px;
 }
 
 /* Navigation Bar */
+nav {
+    margin-bottom: 5px; /* 줄어든 네비게이션과 본문 간격 */
+}
+
 nav ul {
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: flex-end;
-}
-
-nav ul li {
-    margin-left: 20px;
+    justify-content: center;
+    gap: 12px; /* 메뉴 간격 조정 */
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
+    color: #007bff;
+    font-weight: 500;
 }
 
-/* Sections */
+/* Section Styles */
 section {
-    margin-bottom: 40px;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 15px auto; /* 기존 20px → 15px으로 줄임 */
+    padding: 12px; /* 기존 15px → 12px으로 줄임 */
+    max-width: 700px;
+    text-align: left;
 }
 
 /* Research Figure */
 figure {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px; /* 줄어든 위쪽 간격 */
 }
 
 figure img {
@@ -77,9 +59,10 @@ figure img {
     border-radius: 8px;
 }
 
-/* Gallery */
-.gallery img {
-    width: 80px;
-    height: 80px;
-    border-radius: 8px;
+/* Footer */
+footer {
+    text-align: center;
+    padding: 8px;
+    color: #6c757d;
+    font-size: 0.9em;
 }
