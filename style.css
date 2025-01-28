@@ -14,29 +14,6 @@ header {
     padding: 5px 0;
 }
 
-/* Profile Image Slider */
-.profile-container {
-    position: relative;
-    width: 160px;  /* Set fixed width */
-    height: 160px;
-    margin: 0 auto;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.profile-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.profile-container img.active {
-    opacity: 1;
-}
-
 /* Profile Image Slider (Fixed Centering) */
 .profile-container {
     position: relative;
