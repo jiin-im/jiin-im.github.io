@@ -10,7 +10,7 @@
     <!-- Header Section -->
     <header>
         <div class="profile-container">
-            <img src="profile.jpg" class="active" alt="Jiin Im">
+            <img src="profile1.jpg" class="active" alt="Jiin Im">
             <img src="profile2.jpg" alt="Jiin Im">
             <img src="profile3.jpg" alt="Jiin Im">
         </div>
@@ -100,11 +100,23 @@
                 6th Floor, Hanyang Institute of Technology (HIT), Hanyang University, Seongdong-gu, Wangsimni-ro 222, Seoul, South Korea
             </a></p>
         </section>
-    </main>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Jiin Im</p>
     </footer>
+
+    <!-- JavaScript for Image Slider -->
+    <script>
+        let images = document.querySelectorAll(".profile-container img");
+        let dots = document.querySelectorAll(".dots span");
+
+        function changeProfile(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle("active", i === index);
+                dots[i].classList.toggle("active", i === index);
+            });
+        }
+    </script>
 </body>
 </html>
