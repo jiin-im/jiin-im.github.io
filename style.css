@@ -29,15 +29,16 @@ header {
 
 /* 프로필 이미지 (잘리는 문제 해결) */
 .profile-container img {
-    width: 100%;  /* 컨테이너 크기에 맞게 자동 조정 */
-    height: auto; /* 비율 유지하면서 크기 조정 */
-    object-fit: cover; /* 이미지가 원형 안에 꽉 차게 들어감 */
-    border-radius: 50%; /* 원형 유지 */
-    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 원형 안에 꽉 차도록 설정 */
+    border-radius: 50%;
+    opacity: 0;  /* 기본적으로 투명 */
     transition: opacity 0.5s ease-in-out;
 }
 
-/* 활성화된 이미지만 표시 */
+/* 기본 활성화된 이미지만 보이게 설정 */
 .profile-container img.active {
     opacity: 1;
 }
