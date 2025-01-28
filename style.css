@@ -1,6 +1,6 @@
 /* General Layout */
 body {
-    font-family: 'Avenir', sans-serif; /* 폰트 변경 */
+    font-family: 'Avenir', sans-serif; /* Font Change */
     margin: 0;
     padding: 0;
     line-height: 1.4;
@@ -31,7 +31,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 30px; /* 기존 10px → 30px (간격 넓힘) */
+    gap: 30px; /* Increased spacing */
 }
 
 nav ul li a {
@@ -48,24 +48,18 @@ section {
     text-align: left;
 }
 
-/* Research Figure */
+/* Research & Career Figure */
 .research-figure {
-    max-width: 80%; /* Adjust figure size to fit properly */
+    max-width: 600px; /* Fixed max size */
+    width: 100%;
     display: block;
     margin: 15px auto;
 }
 
-/* Career List */
-.career-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.career-list li::before {
-    content: "• ";
-    font-size: 1.2em;
-    color: #007bff;
-    margin-right: 5px;
+/* Bullet Point List */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
 /* Contact Section */
