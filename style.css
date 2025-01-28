@@ -1,6 +1,6 @@
 /* General Layout */
 body {
-    font-family: 'Avenir', sans-serif; /* Font Change */
+    font-family: 'Avenir', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.4;
@@ -14,11 +14,26 @@ header {
     padding: 5px 0;
 }
 
-.profile-img {
+/* Profile Image Slider */
+.profile-slider {
     width: 180px;
     height: 180px;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
     border-radius: 50%;
-    margin-bottom: 3px;
+}
+
+.profile-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.profile-slider img.hidden {
+    opacity: 0;
 }
 
 /* Navigation Bar */
@@ -31,7 +46,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 30px; /* Increased spacing */
+    gap: 30px;
 }
 
 nav ul li a {
@@ -48,28 +63,13 @@ section {
     text-align: left;
 }
 
-/* Research & Career Figure */
+/* Research Figure */
 .research-figure {
-    max-width: 600px; /* Fixed max size */
-    width: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
     display: block;
     margin: 15px auto;
-}
-
-/* Bullet Point List */
-ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-/* Contact Section */
-.contact-info {
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-.contact-info p {
-    margin: 5px 0;
 }
 
 /* Footer */
