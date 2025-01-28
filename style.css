@@ -8,6 +8,13 @@ body {
     background: #f9f9f9;
 }
 
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
 /* Header Styles */
 header {
     background: #4CAF50;
