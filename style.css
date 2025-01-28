@@ -37,6 +37,33 @@ header {
     opacity: 1;
 }
 
+/* Profile Image Slider (Fixed Centering) */
+.profile-container {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-container img {
+    width: 160px;  /* Ensure images fit the container */
+    height: 160px;
+    object-fit: cover; /* Prevents cutting off */
+    border-radius: 50%; /* Keeps the circular shape */
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.profile-container img.active {
+    opacity: 1;
+}
+
 /* Dot Navigation */
 .dots {
     display: flex;
