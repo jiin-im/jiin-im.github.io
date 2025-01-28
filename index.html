@@ -108,6 +108,7 @@
 
     <!-- JavaScript for Image Slider -->
     <script>
+    document.addEventListener("DOMContentLoaded", function () {
         let images = document.querySelectorAll(".profile-container img");
         let dots = document.querySelectorAll(".dots span");
     
@@ -120,6 +121,11 @@
             images[index].classList.add("active"); // 선택된 이미지 활성화
             dots[index].classList.add("active");  // 해당 dot 활성화
         }
+    
+        dots.forEach((dot, i) => {
+            dot.addEventListener("click", () => changeProfile(i));
+        });
+    });
     </script>
 
 </body>
