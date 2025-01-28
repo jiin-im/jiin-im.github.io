@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.5; /* 줄어든 라인 간격 */
+    line-height: 1.4; /* 줄어든 라인 간격 */
     color: #333;
     background: #ffffff;
     text-align: center;
@@ -11,19 +11,19 @@ body {
 
 /* Header Section */
 header {
-    padding: 10px 0; /* 줄어든 간격 */
+    padding: 5px 0; /* 줄어든 간격 */
 }
 
 .profile-img {
-    width: 160px;  /* 프로필 사진 크기 더 키움 */
-    height: 160px;
+    width: 180px;  /* 기존 160px → 180px으로 확대 */
+    height: 180px;
     border-radius: 50%;
-    margin-bottom: 5px;
+    margin-bottom: 3px; /* 사진 아래 간격 줄이기 */
 }
 
 /* Navigation Bar */
 nav {
-    margin-bottom: 5px; /* 줄어든 네비게이션과 본문 간격 */
+    margin-bottom: 3px; /* 네비게이션과 본문 간격 줄이기 */
 }
 
 nav ul {
@@ -31,7 +31,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 12px; /* 메뉴 간격 조정 */
+    gap: 10px; /* 네비게이션 메뉴 간격 축소 */
 }
 
 nav ul li a {
@@ -42,8 +42,8 @@ nav ul li a {
 
 /* Section Styles */
 section {
-    margin: 15px auto; /* 기존 20px → 15px으로 줄임 */
-    padding: 12px; /* 기존 15px → 12px으로 줄임 */
+    margin: 10px auto; /* 기존 15px → 10px으로 줄임 */
+    padding: 10px; /* 기존 12px → 10px으로 줄임 */
     max-width: 700px;
     text-align: left;
 }
@@ -51,7 +51,7 @@ section {
 /* Research Figure */
 figure {
     text-align: center;
-    margin-top: 10px; /* 줄어든 위쪽 간격 */
+    margin-top: 8px; /* 기존 10px → 8px */
 }
 
 figure img {
@@ -62,7 +62,7 @@ figure img {
 /* Footer */
 footer {
     text-align: center;
-    padding: 8px;
+    padding: 6px;
     color: #6c757d;
     font-size: 0.9em;
 }
