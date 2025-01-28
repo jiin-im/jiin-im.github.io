@@ -14,7 +14,7 @@ header {
     padding: 5px 0;
 }
 
-/* Profile Image Slider (Fixed Centering) */
+/* 프로필 이미지 컨테이너 (원형 유지) */
 .profile-container {
     position: relative;
     width: 160px;
@@ -27,16 +27,20 @@ header {
     align-items: center;
 }
 
+/* 프로필 이미지 (정렬 문제 해결) */
 .profile-container img {
-    width: 160px;  /* Ensure images fit the container */
-    height: 160px;
-    object-fit: cover; /* Prevents cutting off */
-    border-radius: 50%; /* Keeps the circular shape */
+    width: 100%;  /* 컨테이너 크기와 동일하게 설정 */
+    height: 100%;
+    object-fit: cover; /* 이미지를 컨테이너 안에 꽉 차게 맞춤 */
     position: absolute;
+    top: 50%;  /* 중앙 정렬 */
+    left: 50%;
+    transform: translate(-50%, -50%);  /* 이미지가 정확히 원형의 중앙에 위치하도록 조정 */
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
 
+/* 활성화된 이미지만 표시 */
 .profile-container img.active {
     opacity: 1;
 }
