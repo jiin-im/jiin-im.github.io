@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>👩🏻‍💻 Jiin Im</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7F6LHLDWFL"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -11,19 +16,51 @@
         gtag('js', new Date());
         gtag('config', 'G-7F6LHLDWFL');
     </script>
+
     <style>
-        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f9f9; }
-        header, main { max-width: 800px; margin: 0 auto; padding: 20px; }
+        body {
+            /* Apply the font from the example and set background to white */
+            font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #333;
+        }
+        header, main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
         header { text-align: center; }
-        nav { background-color: #333; text-align: center; padding: 10px 0; }
+        nav {
+            /* Set nav background to white and add a bottom border for separation */
+            background-color: white;
+            text-align: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+        }
         nav ul { list-style: none; margin: 0; padding: 0; }
         nav ul li { display: inline; margin: 0 15px; }
-        nav a { color: white; text-decoration: none; font-weight: bold; }
-        section { background-color: white; margin-bottom: 20px; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        nav a {
+            /* Change link color to be visible on white */
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            background-color: white; /* Ensure section background is white */
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+        }
         h1, h2 { color: #333; }
         h1 { margin-bottom: 0; }
         h2 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        a { color: #0077cc; }
+        a { color: #0077cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
         footer { text-align: center; padding: 20px; color: #777; }
 
         /* Profile Image Slider */
@@ -36,7 +73,7 @@
 
         /* Publication & Education Styling (from example) */
         .paper { margin-bottom: 1.5rem; }
-        .paper .title { font-size: 1.1em; margin-bottom: 0.2rem; }
+        .paper .title { font-size: 1.1em; margin-bottom: 0.2rem; font-weight: bold; }
         .paper p { margin: 0.2rem 0; }
         .paper i { color: #555; }
     </style>
@@ -49,9 +86,9 @@
             <img src="profile3.jpg" alt="Jiin Im">
         </div>
         <div class="dots">
-            <span class="active" onclick="changeProfile(0)"></span>
-            <span onclick="changeProfile(1)"></span>
-            <span onclick="changeProfile(2)"></span>
+            <span class="active"></span>
+            <span></span>
+            <span></span>
         </div>
         <h1>Jiin Im</h1>
         <p>MS Student @ <a href="https://sail.hanyang.ac.kr/" target="_blank">Spatial AI Lab</a>, Hanyang University</p>
@@ -85,11 +122,11 @@
         <section id="education">
             <h2>Education</h2>
             <div class="paper">
-                <p class="title"><b>Hanyang University <b style="float:right;">2023 - Present</b></b></p>
-                <p>M.S. in Electronic Engineering</p>
+                <p class="title">Hanyang University <b style="float:right;">Mar. 2024 - Present</b></p>
+                <p>M.S. in Electronic Engineering (Expected Feb. 2026)</p>
             </div>
             <div class="paper">
-                <p class="title"><b>Hanyang University <b style="float:right;">2020 - 2023</b></b></p>
+                <p class="title">Hanyang University <b style="float:right;">Mar. 2020 - Feb. 2024</b></p>
                 <p>B.S. in Electronic Engineering (GPA: 3.88/4.0)</p>
             </div>
         </section>
@@ -97,12 +134,12 @@
         <section id="publications">
             <h2>Publications</h2>
             <div class="paper">
-                <p class="title"><b><a href="https://arxiv.org/html/2411.16110v1" target="_blank">FUN-AD: Fully Unsupervised Learning for Anomaly Detection</a></b></p>
+                <p class="title"><a href="https://arxiv.org/html/2411.16110v1" target="_blank">FUN-AD: Fully Unsupervised Learning for Anomaly Detection</a></p>
                 <p>Jiin Im*, Yongho Son*, Je Hyeong Hong</p>
                 <p><i>WACV 2025 (poster)</i></p>
             </div>
              <figure>
-                <img src="figure-placeholder.jpg" class="research-figure" alt="FUN-AD Figure" style="max-width: 100%; border-radius: 4px;">
+                <img src="figure-placeholder.jpg" alt="FUN-AD Figure" style="max-width: 100%; border-radius: 4px;">
             </figure>
         </section>
 
@@ -129,8 +166,8 @@
         <section id="contact">
             <h2>Contact</h2>
             <p>✉️ Email: <a href="mailto:skqldit33@hanyang.ac.kr">skqldit33@hanyang.ac.kr</a></p>
-            <p>📍 Location: 
-                <a href="https://www.google.com/maps/place/Hanyang+University+Engineering+Center+Annex/..." target="_blank">
+            <p>📍 Location:
+                <a href="https://www.google.com/maps/place/%ED%95%9C%EC%96%91%EB%8C%80%ED%95%99%EA%B5%90+%EC%A0%9C4%EA%B3%B5%ED%95%99%EA%B4%80/data=!4m10!1m2!2m1!1z7ZWc7JaR64yA7ZWZ6rWQIOygnOq0gA!3m6!1s0x357ca2eb73409953:0x13388a53b379633e!8m2!3d37.556209!4d127.0450542!15sCg_tlZzslpHrjIDtlZnqtZCSAQp1bml2ZXJzaXR54AEA!16s%2Fg%2F11gffdtm3t?entry=ttu" target="_blank">
                     Engineering Center Annex Unit 415-1, Hanyang University, Seongdong-gu, Wangsimni-ro 222, Seoul, South Korea
                 </a>
             </p>
@@ -143,15 +180,14 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            let images = document.querySelectorAll(".profile-container img");
-            let dots = document.querySelectorAll(".dots span");
+            const images = document.querySelectorAll(".profile-container img");
+            const dots = document.querySelectorAll(".dots span");
             let currentIndex = 0;
 
             function changeProfile(index) {
-                images.forEach((img, i) => {
-                    img.classList.remove("active");
-                    dots[i].classList.remove("active");
-                });
+                images.forEach((img) => img.classList.remove("active"));
+                dots.forEach((dot) => dot.classList.remove("active"));
+
                 images[index].classList.add("active");
                 dots[index].classList.add("active");
                 currentIndex = index;
@@ -160,12 +196,9 @@
             dots.forEach((dot, i) => {
                 dot.onclick = () => changeProfile(i);
             });
-            
-            // Optional: Auto-cycle images
-            // setInterval(() => {
-            //     let nextIndex = (currentIndex + 1) % images.length;
-            //     changeProfile(nextIndex);
-            // }, 5000); // Change image every 5 seconds
+
+            // Initial setup
+            changeProfile(0);
         });
     </script>
 </body>
