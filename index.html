@@ -19,9 +19,10 @@
 
     <style>
         body {
-            /* Apply the font from the example and set background to white */
             font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            line-height: 1.6;
+            /* Font size and line height adjusted for a tighter layout */
+            font-size: 15px;
+            line-height: 1.5;
             margin: 0;
             padding: 0;
             background-color: white;
@@ -30,51 +31,41 @@
         header, main {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            /* Padding reduced */
+            padding: 15px;
         }
         header { text-align: center; }
-        nav {
-            /* Set nav background to white and add a bottom border for separation */
-            background-color: white;
-            text-align: center;
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
-            position: sticky;
-            top: 0;
-        }
-        nav ul { list-style: none; margin: 0; padding: 0; }
-        nav ul li { display: inline; margin: 0 15px; }
-        nav a {
-            /* Change link color to be visible on white */
-            color: #333;
-            text-decoration: none;
-            font-weight: bold;
-        }
         section {
-            background-color: white; /* Ensure section background is white */
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 8px;
+            background-color: white;
+            /* Margin and padding reduced */
+            margin-bottom: 15px;
+            padding: 0 15px 15px 15px; /* Removed top padding to tighten space with h2 */
         }
         h1, h2 { color: #333; }
-        h1 { margin-bottom: 0; }
-        h2 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h1 { margin-bottom: 0; font-size: 2em; }
+        h2 {
+            border-bottom: 1px solid #eee;
+            /* Padding reduced */
+            padding-bottom: 8px;
+            margin-top: 0; /* Removed top margin */
+        }
         a { color: #0077cc; text-decoration: none; }
         a:hover { text-decoration: underline; }
         footer { text-align: center; padding: 20px; color: #777; }
+        p { margin: 0 0 1em 0; } /* Added default paragraph margin */
 
         /* Profile Image Slider */
-        .profile-container { position: relative; width: 150px; height: 150px; margin: 0 auto; }
+        .profile-container { position: relative; width: 150px; height: 150px; margin: 0 auto 10px; }
         .profile-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%; opacity: 0; transition: opacity 0.5s ease-in-out; }
         .profile-container img.active { opacity: 1; }
         .dots { text-align: center; margin-top: 10px; }
         .dots span { cursor: pointer; height: 10px; width: 10px; margin: 0 5px; background-color: #bbb; border-radius: 50%; display: inline-block; }
         .dots span.active { background-color: #717171; }
 
-        /* Publication & Education Styling (from example) */
-        .paper { margin-bottom: 1.5rem; }
-        .paper .title { font-size: 1.1em; margin-bottom: 0.2rem; font-weight: bold; }
-        .paper p { margin: 0.2rem 0; }
+        /* Publication & Education Styling */
+        .paper { margin-bottom: 1rem; }
+        .paper .title { font-size: 1.05em; margin-bottom: 0.2rem; font-weight: bold; }
+        .paper p { margin: 0.1rem 0; }
         .paper i { color: #555; }
     </style>
 </head>
@@ -93,17 +84,6 @@
         <h1>Jiin Im</h1>
         <p>MS Student @ <a href="https://sail.hanyang.ac.kr/" target="_blank">Spatial AI Lab</a>, Hanyang University</p>
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#career">Career</a></li>
-            <li><a href="#hobbies">Hobbies</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
     <main>
         <section id="about">
@@ -185,6 +165,7 @@
             let currentIndex = 0;
 
             function changeProfile(index) {
+                if(index >= images.length) index = 0;
                 images.forEach((img) => img.classList.remove("active"));
                 dots.forEach((dot) => dot.classList.remove("active"));
 
@@ -196,6 +177,11 @@
             dots.forEach((dot, i) => {
                 dot.onclick = () => changeProfile(i);
             });
+
+            // Auto-cycle images every 3 seconds
+            setInterval(() => {
+                changeProfile(currentIndex + 1);
+            }, 3000);
 
             // Initial setup
             changeProfile(0);
