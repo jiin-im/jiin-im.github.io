@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>👩🏻‍💻 Jiin Im</title>
-    <link rel="stylesheet" href="style.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7F6LHLDWFL"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -12,9 +11,37 @@
         gtag('js', new Date());
         gtag('config', 'G-7F6LHLDWFL');
     </script>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f9f9; }
+        header, main { max-width: 800px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; }
+        nav { background-color: #333; text-align: center; padding: 10px 0; }
+        nav ul { list-style: none; margin: 0; padding: 0; }
+        nav ul li { display: inline; margin: 0 15px; }
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+        section { background-color: white; margin-bottom: 20px; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1, h2 { color: #333; }
+        h1 { margin-bottom: 0; }
+        h2 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        a { color: #0077cc; }
+        footer { text-align: center; padding: 20px; color: #777; }
+
+        /* Profile Image Slider */
+        .profile-container { position: relative; width: 150px; height: 150px; margin: 0 auto; }
+        .profile-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%; opacity: 0; transition: opacity 0.5s ease-in-out; }
+        .profile-container img.active { opacity: 1; }
+        .dots { text-align: center; margin-top: 10px; }
+        .dots span { cursor: pointer; height: 10px; width: 10px; margin: 0 5px; background-color: #bbb; border-radius: 50%; display: inline-block; }
+        .dots span.active { background-color: #717171; }
+
+        /* Publication & Education Styling (from example) */
+        .paper { margin-bottom: 1.5rem; }
+        .paper .title { font-size: 1.1em; margin-bottom: 0.2rem; }
+        .paper p { margin: 0.2rem 0; }
+        .paper i { color: #555; }
+    </style>
 </head>
 <body>
-    <!-- Header Section -->
     <header>
         <div class="profile-container">
             <img src="profile.jpg" class="active" alt="Jiin Im">
@@ -30,79 +57,65 @@
         <p>MS Student @ <a href="https://sail.hanyang.ac.kr/" target="_blank">Spatial AI Lab</a>, Hanyang University</p>
     </header>
 
-    <!-- Navigation -->
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#research">Research</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#publications">Publications</a></li>
             <li><a href="#career">Career</a></li>
             <li><a href="#hobbies">Hobbies</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Main Content -->
     <main>
-        <!-- About Section -->
         <section id="about">
             <h2>About</h2>
             <p>
-                I am a Master's student at the 
-                <a href="https://sail.hanyang.ac.kr/" target="_blank">Spatial AI Lab</a>, 
-                Hanyang University, advised by 
-                <a href="https://scholar.google.com/citations?user=7axCcBkAAAAJ&hl=en" target="_blank">Prof. Je Hyeong Hong</a>.
-                My research interests lie in semantic correspondence, spatial reasoning, and geometry-aware vision.
+                I am a Master's student at the <a href="https://sail.hanyang.ac.kr/" target="_blank">Spatial AI Lab</a>, Hanyang University, advised by <a href="https://scholar.google.com/citations?user=7axCcBkAAAAJ&hl=en" target="_blank">Prof. Je Hyeong Hong</a>. My research interests lie in semantic correspondence, spatial reasoning, and geometry-aware vision.
             </p>
-        
             <p>
-                I am particularly interested in how intelligent systems can discover structural relationships across different visual observations, 
-                and how such correspondence can serve as a foundation for spatial understanding. Rather than relying solely on appearance, 
-                I aim to build models that capture meaningful relations across entities through unsupervised or weakly supervised learning.
+                I am particularly interested in how intelligent systems can discover structural relationships across different visual observations, and how such correspondence can serve as a foundation for spatial understanding. Rather than relying solely on appearance, I aim to build models that capture meaningful relations across entities through unsupervised or weakly supervised learning.
             </p>
-        
             <p>
-                My goal is to enable machines to reason over spatial structure, infer geometric relationships, and interpret scenes in a way that generalizes across tasks and environments. 
-                This line of research is motivated by challenges such as partial observability, viewpoint variation, and the need for functional understanding, 
-                which arise frequently in real-world perception and robotics.
-            </p>
-        
-            <p>
-                I hold a B.S. in Electronic Engineering (2020–2023) from Hanyang University (GPA: 3.88/4.0),
-                and I am currently pursuing my M.S. in the same department.
+                My goal is to enable machines to reason over spatial structure, infer geometric relationships, and interpret scenes in a way that generalizes across tasks and environments. This line of research is motivated by challenges such as partial observability, viewpoint variation, and the need for functional understanding, which arise frequently in real-world perception and robotics.
             </p>
         </section>
 
-        <!-- Research Section -->
-        <section id="research">
-            <h2>Research</h2>
-            <ul>
-                <li>
-                    <a href="https://arxiv.org/html/2411.16110v1" target="_blank">
-                        FUN-AD: Fully Unsupervised Learning for Anomaly Detection
-                    </a> <br>
-                    <small>Jiin Im*, Yongho Son*, Je Hyeong Hong</small> <br>
-                    <small>WACV 2025 (poster)</small>
-                </li>
-            </ul>
-            <figure>
-                <img src="figure-placeholder.jpg" class="research-figure" alt="FUN-AD Figure">
+        <section id="education">
+            <h2>Education</h2>
+            <div class="paper">
+                <p class="title"><b>Hanyang University <b style="float:right;">2023 - Present</b></b></p>
+                <p>M.S. in Electronic Engineering</p>
+            </div>
+            <div class="paper">
+                <p class="title"><b>Hanyang University <b style="float:right;">2020 - 2023</b></b></p>
+                <p>B.S. in Electronic Engineering (GPA: 3.88/4.0)</p>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+            <div class="paper">
+                <p class="title"><b><a href="https://arxiv.org/html/2411.16110v1" target="_blank">FUN-AD: Fully Unsupervised Learning for Anomaly Detection</a></b></p>
+                <p>Jiin Im*, Yongho Son*, Je Hyeong Hong</p>
+                <p><i>WACV 2025 (poster)</i></p>
+            </div>
+             <figure>
+                <img src="figure-placeholder.jpg" class="research-figure" alt="FUN-AD Figure" style="max-width: 100%; border-radius: 4px;">
             </figure>
         </section>
 
-        <!-- Career Section -->
         <section id="career">
             <h2>Career</h2>
             <ul>
                 <li>
                     Undergraduate Researcher at Intelligent Robotics Research Center, KIST (2022.06.22 – 2022.08.31) <br>
-                    <small>Worked under the supervision of 
-                        <a href="https://scholar.google.co.uk/citations?user=xlNXvLEAAAAJ&hl=en&oi=ao" target="_blank">Dr. Yoonseob Lim</a>
-                    </small>
+                    <small>Worked under the supervision of <a href="https://scholar.google.co.uk/citations?user=xlNXvLEAAAAJ&hl=en&oi=ao" target="_blank">Dr. Yoonseob Lim</a></small>
                 </li>
             </ul>
         </section>
 
-        <!-- Hobbies Section -->
         <section id="hobbies">
             <h2>Hobbies</h2>
             <p>In my free time, I enjoy:</p>
@@ -113,29 +126,26 @@
             </ul>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact">
             <h2>Contact</h2>
             <p>✉️ Email: <a href="mailto:skqldit33@hanyang.ac.kr">skqldit33@hanyang.ac.kr</a></p>
             <p>📍 Location: 
-                <a href="https://www.google.com/maps/place/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C+%EC%82%AC%EA%B7%BC%EB%8F%99+%ED%95%9C%EC%96%91%EB%8C%80%ED%95%99%EA%B5%90+%EA%B3%B5%EC%97%85%EC%84%BC%ED%84%B0%EB%B3%84%EA%B4%80/data=!3m1!4b1!4m6!3m5!1s0x357ca4a3ed0e9ec7:0xf6e4e73a2c545d9a!8m2!3d37.5546208!4d127.0466021!16s%2Fg%2F12hmrbdwm?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D" 
-                   target="_blank">
+                <a href="https://www.google.com/maps/place/Hanyang+University+Engineering+Center+Annex/..." target="_blank">
                     Engineering Center Annex Unit 415-1, Hanyang University, Seongdong-gu, Wangsimni-ro 222, Seoul, South Korea
                 </a>
             </p>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Jiin Im</p>
+        <p>© 2025 Jiin Im</p>
     </footer>
 
-    <!-- JavaScript for Image Slider -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             let images = document.querySelectorAll(".profile-container img");
             let dots = document.querySelectorAll(".dots span");
+            let currentIndex = 0;
 
             function changeProfile(index) {
                 images.forEach((img, i) => {
@@ -144,11 +154,18 @@
                 });
                 images[index].classList.add("active");
                 dots[index].classList.add("active");
+                currentIndex = index;
             }
 
             dots.forEach((dot, i) => {
-                dot.addEventListener("click", () => changeProfile(i));
+                dot.onclick = () => changeProfile(i);
             });
+            
+            // Optional: Auto-cycle images
+            // setInterval(() => {
+            //     let nextIndex = (currentIndex + 1) % images.length;
+            //     changeProfile(nextIndex);
+            // }, 5000); // Change image every 5 seconds
         });
     </script>
 </body>
