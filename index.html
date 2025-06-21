@@ -51,32 +51,31 @@
         p { margin: 0 0 1em 0; }
 
         /* Profile Image Slider */
-        .profile-container { position: relative; width: 150px; height: 150px; margin: 0 auto 10px; }
-        .profile-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%; opacity: 0; transition: opacity 0.5s ease-in-out; }
-        .profile-container img.active { opacity: 1; }
-        
-        /* Navigation Arrows for the slider */
-        .slider-nav {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 30px;
-            height: 30px;
-            background-color: rgba(0, 0, 0, 0.2);
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            user-select: none; /* Prevents text selection on click */
-            transition: background-color 0.3s ease;
+        .profile-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 10px;
+            cursor: grab; /* 드래그 가능함을 나타내는 커서 */
+            touch-action: pan-y; /* 수직 스크롤은 유지하고 수평 스와이프를 위함 */
         }
-        .slider-nav:hover { background-color: rgba(0, 0, 0, 0.5); }
-        .slider-nav.prev { left: -40px; } /* Positioned outside the circle */
-        .slider-nav.next { right: -40px; } /* Positioned outside the circle */
+        .profile-container:active {
+            cursor: grabbing; /* 드래그 중임을 나타내는 커서 */
+        }
+        .profile-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            pointer-events: none; /* 이미지에 대한 포인터 이벤트를 비활성화하여 컨테이너가 이벤트를 받도록 함 */
+        }
+        .profile-container img.active {
+            opacity: 1;
+        }
 
         .dots { text-align: center; margin-top: 10px; }
         .dots span { cursor: pointer; height: 10px; width: 10px; margin: 0 5px; background-color: #bbb; border-radius: 50%; display: inline-block; }
@@ -95,8 +94,6 @@
             <img src="profile.jpg" class="active" alt="Jiin Im">
             <img src="profile2.jpg" alt="Jiin Im">
             <img src="profile3.jpg" alt="Jiin Im">
-            <div class="slider-nav prev">&lt;</div>
-            <div class="slider-nav next">&gt;</div>
         </div>
         <div class="dots">
             <span class="active"></span>
@@ -182,50 +179,67 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            const profileContainer = document.querySelector(".profile-container");
             const images = document.querySelectorAll(".profile-container img");
             const dots = document.querySelectorAll(".dots span");
-            const prevBtn = document.querySelector(".slider-nav.prev");
-            const nextBtn = document.querySelector(".slider-nav.next");
             let currentIndex = 0;
+            let startX = 0;
+            let isSwiping = false;
 
             function changeProfile(index) {
-                // Wrap around logic for the index
                 if (index >= images.length) {
                     index = 0;
                 } else if (index < 0) {
                     index = images.length - 1;
                 }
-
                 images.forEach((img) => img.classList.remove("active"));
                 dots.forEach((dot) => dot.classList.remove("active"));
-
                 images[index].classList.add("active");
                 dots[index].classList.add("active");
                 currentIndex = index;
             }
 
-            // Click event for the dots
             dots.forEach((dot, i) => {
                 dot.onclick = () => changeProfile(i);
             });
 
-            // Click events for prev/next buttons
-            prevBtn.onclick = () => {
-                changeProfile(currentIndex - 1);
-            };
+            // --- Swipe/Drag Functionality ---
+            function handleSwipe(endX) {
+                const threshold = 50; // Minimum distance for a swipe
+                const swipeDistance = endX - startX;
 
-            nextBtn.onclick = () => {
-                changeProfile(currentIndex + 1);
-            };
+                if (Math.abs(swipeDistance) > threshold) {
+                    if (swipeDistance < 0) {
+                        // Swipe Left
+                        changeProfile(currentIndex + 1);
+                    } else {
+                        // Swipe Right
+                        changeProfile(currentIndex - 1);
+                    }
+                }
+            }
+
+            profileContainer.addEventListener('pointerdown', (e) => {
+                e.preventDefault(); // Prevents issues like image dragging
+                startX = e.clientX;
+                isSwiping = true;
+            });
+
+            profileContainer.addEventListener('pointerup', (e) => {
+                if (isSwiping) {
+                    handleSwipe(e.clientX);
+                }
+                isSwiping = false;
+            });
             
-            // --- The automatic slide has been removed ---
-            /*
-            setInterval(() => {
-                changeProfile(currentIndex + 1);
-            }, 3000);
-            */
+            profileContainer.addEventListener('pointerleave', (e) => {
+                if (isSwiping) {
+                    handleSwipe(e.clientX);
+                }
+                isSwiping = false;
+            });
 
-            // Initial setup to show the first image
+            // Initial setup
             changeProfile(0);
         });
     </script>
