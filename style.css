@@ -7,6 +7,9 @@ body {
     color: #333;
     background: #ffffff;
     text-align: center;
+
+    font-variant-numeric: lining-nums;
+    font-feature-settings: 'lnum';
 }
 
 /* Header Section */
