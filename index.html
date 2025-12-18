@@ -25,7 +25,8 @@
             margin: 0;
             padding: 0;
             background-color: white;
-            color: #333;
+            /* [변경] 전체 기본 폰트 색상을 완전한 검정으로 변경 (#333 -> #000) */
+            color: #000; 
 
             font-variant-numeric: lining-nums;
             font-feature-settings: 'lnum';
@@ -41,27 +42,32 @@
             margin-bottom: 15px;
             padding: 0 15px 15px 15px;
         }
-        h1, h2 { color: #333; }
+        
+        /* [변경] 제목 태그 색상도 완전한 검정으로 변경 */
+        h1, h2 { color: #000; } 
         h1 { margin-bottom: 0; font-size: 2em; }
         h2 {
             border-bottom: 1px solid #eee;
             padding-bottom: 8px;
             margin-top: 0;
         }
+        
+        /* [유지] 하이퍼링크 색상은 기존(#0077cc) 그대로 유지 */
         a { color: #0077cc; text-decoration: none; }
         a:hover { text-decoration: underline; }
+        
         footer { text-align: center; padding: 20px; color: #777; }
         p { margin: 0 0 1em 0; }
         ul { margin-top: 0.5em; }
 
         /* --- Profile Image Styling --- */
         .profile-container {
-            width: 120px;
-            height: 120px;
+            /* [변경] 프로필 이미지 크기를 150px로 확대 (120px -> 150px) */
+            width: 150px;
+            height: 150px;
             margin: 0 auto 10px;
             border-radius: 50%;
             overflow: hidden;
-            /* 모바일 등에서 꾹 눌렀을 때 선택되는 것 방지 */
             -webkit-user-select: none;
             user-select: none;
         }
@@ -71,13 +77,12 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            /* [추가됨] CSS 레벨에서의 드래그 및 터치 메뉴 방지 */
             pointer-events: auto; 
             -webkit-user-drag: none;
             -khtml-user-drag: none;
             -moz-user-drag: none;
             -o-user-drag: none;
-            -webkit-touch-callout: none; /* 아이폰 등에서 길게 누르기 메뉴 방지 */
+            -webkit-touch-callout: none;
         }
 
         /* --- Publication Styling --- */
@@ -102,7 +107,8 @@
             font-size: 1.1em;
             font-weight: bold;
             margin: 0 0 0.2rem 0;
-            color: #333;
+            /* [변경] 논문 제목 색상 검정으로 변경 */
+            color: #000;
         }
         .publication-details .authors {
             font-size: 0.95em;
@@ -118,7 +124,8 @@
             padding: 4px 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            color: #333;
+            /* [변경] 버튼 내부 텍스트 색상도 검정으로 통일 */
+            color: #000;
             background-color: #f7f7f7;
             text-decoration: none;
             margin-right: 8px;
