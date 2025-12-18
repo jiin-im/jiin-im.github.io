@@ -25,9 +25,7 @@
             margin: 0;
             padding: 0;
             background-color: white;
-            /* [변경] 전체 기본 폰트 색상을 완전한 검정으로 변경 (#333 -> #000) */
-            color: #000; 
-
+            color: #000;
             font-variant-numeric: lining-nums;
             font-feature-settings: 'lnum';
         }
@@ -43,16 +41,20 @@
             padding: 0 15px 15px 15px;
         }
         
-        /* [변경] 제목 태그 색상도 완전한 검정으로 변경 */
         h1, h2 { color: #000; } 
-        h1 { margin-bottom: 0; font-size: 2em; }
+        
+        h1 { 
+            margin: 0; 
+            font-size: 2em; 
+            line-height: 1;
+        }
+
         h2 {
             border-bottom: 1px solid #eee;
             padding-bottom: 8px;
             margin-top: 0;
         }
         
-        /* [유지] 하이퍼링크 색상은 기존(#0077cc) 그대로 유지 */
         a { color: #0077cc; text-decoration: none; }
         a:hover { text-decoration: underline; }
         
@@ -60,18 +62,30 @@
         p { margin: 0 0 1em 0; }
         ul { margin-top: 0.5em; }
 
-        /* --- Profile Image Styling --- */
-        .profile-container {
-            width: 125px;
-            height: 125px;
-            margin: 0 auto 10px;
-            border-radius: 50%;
+        /* 타이틀 그룹 (이미지 + 이름) */
+        .title-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        /* [변경] 프로필 아이콘 스타일 */
+        .profile-icon {
+            width: 50px;
+            height: 50px;
+            /* [수정] 원형 제거 (50% -> 4px) */
+            /* 완전히 각지게 하려면 0px로 변경하세요 */
+            border-radius: 4px; 
             overflow: hidden;
+            flex-shrink: 0;
+            
             -webkit-user-select: none;
             user-select: none;
         }
 
-        .profile-container img {
+        .profile-icon img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -106,7 +120,6 @@
             font-size: 1.1em;
             font-weight: bold;
             margin: 0 0 0.2rem 0;
-            /* [변경] 논문 제목 색상 검정으로 변경 */
             color: #000;
         }
         .publication-details .authors {
@@ -123,7 +136,6 @@
             padding: 4px 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            /* [변경] 버튼 내부 텍스트 색상도 검정으로 통일 */
             color: #000;
             background-color: #f7f7f7;
             text-decoration: none;
@@ -143,13 +155,15 @@
 </head>
 <body>
     <header>
-        <div class="profile-container">
-            <img src="IMG_3011.jpeg" alt="Jiin Im" 
-                 oncontextmenu="return false" 
-                 ondragstart="return false">
+        <div class="title-group">
+            <div class="profile-icon">
+                <img src="IMG_3011.jpeg" alt="Jiin Im" 
+                     oncontextmenu="return false" 
+                     ondragstart="return false">
+            </div>
+            <h1>Jiin Im</h1>
         </div>
-
-        <h1>Jiin Im</h1>
+        
         <p>MS Student @ <a href="https://sail.hanyang.ac.kr/" target="_blank">Spatial AI Lab</a>, Hanyang University</p>
     </header>
 
@@ -178,7 +192,7 @@
                 <p>B.S. in Electronic Engineering (GPA: 3.88/4.0)</p>
             </div>
         </section>
-
+        
         <section id="publications">
             <h2>Publications</h2>
             <div class="publication-entry">
@@ -196,7 +210,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="projects">
             <h2>Projects</h2>
             
@@ -240,7 +254,7 @@
                 </p>
             </div>
         </section>
-        
+
         <section id="experience">
             <h2>Experience</h2>
             <ul>
