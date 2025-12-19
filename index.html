@@ -25,7 +25,9 @@
             margin: 0;
             padding: 0;
             background-color: white;
-            color: #000;
+            /* [변경] 전체 기본 폰트 색상을 완전한 검정으로 변경 (#333 -> #000) */
+            color: #000; 
+
             font-variant-numeric: lining-nums;
             font-feature-settings: 'lnum';
         }
@@ -41,20 +43,16 @@
             padding: 0 15px 15px 15px;
         }
         
+        /* [변경] 제목 태그 색상도 완전한 검정으로 변경 */
         h1, h2 { color: #000; } 
-        
-        h1 { 
-            margin: 0; 
-            font-size: 2em; 
-            line-height: 1;
-        }
-
+        h1 { margin-bottom: 0; font-size: 2em; }
         h2 {
             border-bottom: 1px solid #eee;
             padding-bottom: 8px;
             margin-top: 0;
         }
         
+        /* [유지] 하이퍼링크 색상은 기존(#0077cc) 그대로 유지 */
         a { color: #0077cc; text-decoration: none; }
         a:hover { text-decoration: underline; }
         
@@ -62,28 +60,18 @@
         p { margin: 0 0 1em 0; }
         ul { margin-top: 0.5em; }
 
-        /* 타이틀 그룹 (이미지 + 이름) */
-        .title-group {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        /* [변경] 프로필 아이콘 스타일 */
-        .profile-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 0px; 
+        /* --- Profile Image Styling --- */
+        .profile-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 10px;
+            border-radius: 50%;
             overflow: hidden;
-            flex-shrink: 0;
-            
             -webkit-user-select: none;
             user-select: none;
         }
 
-        .profile-icon img {
+        .profile-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -118,6 +106,7 @@
             font-size: 1.1em;
             font-weight: bold;
             margin: 0 0 0.2rem 0;
+            /* [변경] 논문 제목 색상 검정으로 변경 */
             color: #000;
         }
         .publication-details .authors {
@@ -134,6 +123,7 @@
             padding: 4px 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
+            /* [변경] 버튼 내부 텍스트 색상도 검정으로 통일 */
             color: #000;
             background-color: #f7f7f7;
             text-decoration: none;
@@ -153,15 +143,13 @@
 </head>
 <body>
     <header>
-        <div class="title-group">
-            <div class="profile-icon">
-                <img src="IMG_3011.jpeg" alt="Jiin Im" 
-                     oncontextmenu="return false" 
-                     ondragstart="return false">
-            </div>
-            <h1>Jiin Im</h1>
+        <div class="profile-container">
+            <img src="IMG_3011.jpeg" alt="Jiin Im" 
+                 oncontextmenu="return false" 
+                 ondragstart="return false">
         </div>
-        
+
+        <h1>Jiin Im</h1>
         <p>MS Student @ <a href="https://sail.hanyang.ac.kr/" target="_blank">Spatial AI Lab</a>, Hanyang University</p>
     </header>
 
@@ -182,15 +170,19 @@
         <section id="education">
             <h2>Education</h2>
             <div class="paper">
-                <p class="title">Hanyang University <b style="float:right;">Mar. 2024 - Present</b></p>
+                <p class="title">Hanyang University 
+                    <span style="float:right; color: #0077cc; font-style: italic;">Mar. 2024 - Present</span>
+                </p>
                 <p>M.S. in Electronic Engineering (Expected Feb. 2026)</p>
             </div>
             <div class="paper">
-                <p class="title">Hanyang University <b style="float:right;">Mar. 2020 - Feb. 2024</b></p>
+                <p class="title">Hanyang University 
+                    <span style="float:right; color: #0077cc; font-style: italic;">Mar. 2020 - Feb. 2024</span>
+                </p>
                 <p>B.S. in Electronic Engineering (GPA: 3.88/4.0)</p>
             </div>
         </section>
-        
+
         <section id="publications">
             <h2>Publications</h2>
             <div class="publication-entry">
@@ -208,14 +200,14 @@
                 </div>
             </div>
         </section>
-
+        
         <section id="projects">
             <h2>Projects</h2>
             
             <div class="paper">
                 <p class="title">
                     Semantic Correspondence via Structural Information on 2D and 3D Domains
-                    <b style="float:right; font-weight:normal; font-size:0.9em;">Mar. 2025 - Present</b>
+                    <span style="float:right; font-size:0.9em; color: #0077cc; font-style: italic;">Mar. 2025 - Present</span>
                 </p>
                 <p>
                     Establishing semantic correspondence on both 2D image and 3D geometry domains using structural information related to Shape-of-You, currently under review.
@@ -225,7 +217,7 @@
             <div class="paper">
                 <p class="title">
                     Non-Rigid Registration of Deformed Point Clouds via Geometric Correspondence
-                    <b style="float:right; font-weight:normal; font-size:0.9em;">Jun. 2025 - Dec. 2025</b>
+                    <span style="float:right; font-size:0.9em; color: #0077cc; font-style: italic;">Jun. 2025 - Dec. 2025</span>
                 </p>
                 <p>
                     Focused on estimating geometric correspondence in deformed point clouds to perform robust non-rigid registration.
@@ -235,7 +227,7 @@
             <div class="paper">
                 <p class="title">
                     Privacy-Preserving Geometric Description against Image Reconstruction
-                    <b style="float:right; font-weight:normal; font-size:0.9em;">Jun. 2024 - Feb. 2025</b>
+                    <span style="float:right; font-size:0.9em; color: #0077cc; font-style: italic;">Jun. 2024 - Feb. 2025</span>
                 </p>
                 <p>
                     Explored geometric description methods that prevent original image recovery from descriptors while maintaining matching performance.
@@ -245,14 +237,14 @@
             <div class="paper">
                 <p class="title">
                     Unsupervised Anomaly Detection with Noisy Training Data
-                    <b style="float:right; font-weight:normal; font-size:0.9em;">Jan. 2023 - May. 2024</b>
+                    <span style="float:right; font-size:0.9em; color: #0077cc; font-style: italic;">Jan. 2023 - May. 2024</span>
                 </p>
                 <p>
                     Addressing anomaly detection in unsupervised settings with noisy training data related to FUN-AD.
                 </p>
             </div>
         </section>
-
+        
         <section id="experience">
             <h2>Experience</h2>
             <ul>
