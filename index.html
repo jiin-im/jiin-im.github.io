@@ -20,12 +20,12 @@
     <style>
         body {
             font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 15px;
-            line-height: 1.5;
+            /* [유지] 본문 글자 크기 14px */
+            font-size: 14px;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
             background-color: white;
-            /* [변경] 전체 기본 폰트 색상을 완전한 검정으로 변경 (#333 -> #000) */
             color: #000; 
 
             font-variant-numeric: lining-nums;
@@ -43,17 +43,26 @@
             padding: 0 15px 15px 15px;
         }
         
-        /* [변경] 제목 태그 색상도 완전한 검정으로 변경 */
-        h1, h2 { color: #000; } 
-        h1 { margin-bottom: 0; font-size: 2em; }
+        h1, h2 { 
+            color: #000; 
+            font-weight: 400; 
+        } 
+
+        h1 { 
+            margin-bottom: 0; 
+            font-size: 38px; 
+            letter-spacing: -0.5px;
+        }
+
         h2 {
+            font-size: 27px;
             border-bottom: 1px solid #eee;
             padding-bottom: 8px;
-            margin-top: 0;
+            margin-top: 15px;
         }
         
-        /* [유지] 하이퍼링크 색상은 기존(#0077cc) 그대로 유지 */
-        a { color: #0077cc; text-decoration: none; }
+        /* [변경] 하이퍼링크 색상을 더 진한 #3ca8fd로 변경 */
+        a { color: #3ca8fd; text-decoration: none; }
         a:hover { text-decoration: underline; }
         
         footer { text-align: center; padding: 20px; color: #777; }
@@ -62,8 +71,8 @@
 
         /* --- Profile Image Styling --- */
         .profile-container {
-            width: 150px;
-            height: 150px;
+            width: 175px;
+            height: 175px;
             margin: 0 auto 10px;
             border-radius: 50%;
             overflow: hidden;
@@ -106,7 +115,6 @@
             font-size: 1.1em;
             font-weight: bold;
             margin: 0 0 0.2rem 0;
-            /* [변경] 논문 제목 색상 검정으로 변경 */
             color: #000;
         }
         .publication-details .authors {
@@ -119,11 +127,10 @@
         }
         .publication-links a.btn {
             display: inline-block;
-            font-size: 0.8em;
+            font-size: 0.9em;
             padding: 4px 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            /* [변경] 버튼 내부 텍스트 색상도 검정으로 통일 */
             color: #000;
             background-color: #f7f7f7;
             text-decoration: none;
@@ -136,7 +143,7 @@
         }
         
         .paper { margin-bottom: 1rem; }
-        .paper .title { font-size: 1.05em; margin-bottom: 0.2rem; font-weight: bold; }
+        .paper .title { font-size: 1.1em; margin-bottom: 0.2rem; font-weight: bold; }
         .paper p { margin: 0.1rem 0; }
         .paper i { color: #555; }
     </style>
@@ -171,15 +178,15 @@
             <h2>Education</h2>
             <div class="paper">
                 <p class="title">Hanyang University 
-                    <span style="float:right; color: #0077cc; font-style: italic;">Mar. 2024 - Present</span>
+                    <span style="float:right; color: #3ca8fd; font-style: italic;">Mar. 2024 - Present</span>
                 </p>
-                <p>M.S. in Electronic Engineering (Expected Feb. 2026)</p>
+                <p>M.S. in Electronic Engineering (Advisor: <a href="https://scholar.google.com/citations?user=7axCcBkAAAAJ&hl=en" target="_blank">Je Hyeong Hong</a>)</p>
             </div>
             <div class="paper">
                 <p class="title">Hanyang University 
-                    <span style="float:right; color: #0077cc; font-style: italic;">Mar. 2020 - Feb. 2024</span>
+                    <span style="float:right; color: #3ca8fd; font-style: italic;">Mar. 2020 - Feb. 2024</span>
                 </p>
-                <p>B.S. in Electronic Engineering (GPA: 3.88/4.0)</p>
+                <p>B.S. in Electronic Engineering, <i>Summa Cum Laude</i></p>
             </div>
         </section>
 
@@ -191,7 +198,7 @@
                 </div>
                 <div class="publication-details">
                     <p class="title">FUN-AD: Fully Unsupervised Learning for Anomaly Detection with Noisy Training Data</p>
-                    <p class="authors"><u>Jiin Im</u>*, Yongho Son*, Je Hyeong Hong</p>
+                    <p class="authors"><u><strong>Jiin Im</strong></u>*, Yongho Son*, Je Hyeong Hong</p>
                     <p class="conference"><i>WACV 2025</i></p>
                     <div class="publication-links">
                         <a href="https://openaccess.thecvf.com/content/WACV2025/papers/Im_FUN-AD_Fully_Unsupervised_Learning_for_Anomaly_Detection_with_Noisy_Training_WACV_2025_paper.pdf" class="btn" target="_blank">Paper</a>
@@ -207,7 +214,7 @@
             <div class="paper">
                 <p class="title">
                     Semantic Correspondence via Structural Information on 2D and 3D Domains
-                    <span style="float:right; font-size:0.9em; color: #0077cc; font-style: italic;">Mar. 2025 - Present</span>
+                    <span style="float:right; font-size:0.9em; color: #3ca8fd; font-style: italic;">Mar. 2025 - Present</span>
                 </p>
                 <p>
                     Establishing semantic correspondence on both 2D image and 3D geometry domains using structural information, which is related to a paper currently under review.
@@ -217,7 +224,7 @@
             <div class="paper">
                 <p class="title">
                     Non-Rigid Registration of Deformed Point Clouds via Geometric Correspondence
-                    <span style="float:right; font-size:0.9em; color: #0077cc; font-style: italic;">Jun. 2025 - Dec. 2025</span>
+                    <span style="float:right; font-size:0.9em; color: #3ca8fd; font-style: italic;">Jun. 2025 - Dec. 2025</span>
                 </p>
                 <p>
                     Focused on estimating geometric correspondence in deformed point clouds to perform robust non-rigid registration.
@@ -227,7 +234,7 @@
             <div class="paper">
                 <p class="title">
                     Privacy-Preserving Geometric Description against Image Reconstruction
-                    <span style="float:right; font-size:0.9em; color: #0077cc; font-style: italic;">Jun. 2024 - Feb. 2025</span>
+                    <span style="float:right; font-size:0.9em; color: #3ca8fd; font-style: italic;">Jun. 2024 - Feb. 2025</span>
                 </p>
                 <p>
                     Explored geometric description methods that prevent original image recovery from descriptors while maintaining matching performance.
@@ -237,7 +244,7 @@
             <div class="paper">
                 <p class="title">
                     Unsupervised Anomaly Detection with Noisy Training Data
-                    <span style="float:right; font-size:0.9em; color: #0077cc; font-style: italic;">Jan. 2023 - May. 2024</span>
+                    <span style="float:right; font-size:0.9em; color: #3ca8fd; font-style: italic;">Jan. 2023 - May. 2024</span>
                 </p>
                 <p>
                     Addressing anomaly detection in unsupervised settings with noisy training data related to FUN-AD.
@@ -280,7 +287,7 @@
             <h2>Contact</h2>
             <p>✉️ Email: <a href="mailto:skqldit33@hanyang.ac.kr">skqldit33@hanyang.ac.kr</a></p>
             <p>📍 Location:
-                <a href="https://www.google.com/maps/place/%ED%95%9C%EC%96%91%EB%8C%80%ED%95%99%EA%B5%90+%EC%A0%9C4%EA%B3%B5%ED%95%99%EA%B4%80/data=!4m10!1m2!2m1!1z7ZWc7JaR64yA7ZWZ6rWQIOygnOq0gA!3m6!1s0x357ca2eb73409953:0x13388a53b379633e!8m2!3d37.556209!4d127.0450542!15sCg_tlZzslpHrjIDtlZnqtZCSAQp1bml2ZXJzaXR54AEA!16s%2Fg%2F11gffdtm3t?entry=ttu" target="_blank">
+                <a href="https://maps.app.goo.gl/bUTmLmKb5GnFjvp79" target="_blank">
                     Engineering Center Annex Unit 415-1, Hanyang University, Seongdong-gu, Wangsimni-ro 222, Seoul, South Korea
                 </a>
             </p>
