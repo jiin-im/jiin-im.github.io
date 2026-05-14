@@ -25,31 +25,33 @@
             margin: 0;
             padding: 0;
             background-color: white;
-            color: #000; 
-
+            color: #000;
             font-variant-numeric: lining-nums;
             font-feature-settings: 'lnum';
         }
+
         header, main {
             max-width: 800px;
             margin: 0 auto;
             padding: 15px;
         }
+
         header { text-align: center; }
+
         section {
             background-color: white;
             margin-bottom: 15px;
             padding: 0 15px 15px 15px;
         }
-        
-        h1, h2 { 
-            color: #000; 
-            font-weight: 400; 
-        } 
 
-        h1 { 
-            margin-bottom: 0; 
-            font-size: 38px; 
+        h1, h2 {
+            color: #000;
+            font-weight: 400;
+        }
+
+        h1 {
+            margin-bottom: 0;
+            font-size: 38px;
             letter-spacing: -0.5px;
         }
 
@@ -59,10 +61,10 @@
             padding-bottom: 8px;
             margin-top: 15px;
         }
-        
+
         a { color: #3ca8fd; text-decoration: none; }
         a:hover { text-decoration: underline; }
-        
+
         footer { text-align: center; padding: 20px; color: #777; }
         p { margin: 0 0 1em 0; }
         ul { margin-top: 0.5em; }
@@ -83,7 +85,7 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            pointer-events: auto; 
+            pointer-events: auto;
             -webkit-user-drag: none;
             -khtml-user-drag: none;
             -moz-user-drag: none;
@@ -98,31 +100,55 @@
             gap: 25px;
             margin-top: 20px;
         }
+
         .publication-image {
             flex-basis: 35%;
             flex-shrink: 0;
         }
+
         .publication-image img {
             width: 100%;
             border-radius: 4px;
         }
+
         .publication-details {
             flex-basis: 65%;
         }
+
         .publication-details .title {
             font-size: 1.1em;
             font-weight: bold;
             margin: 0 0 0.2rem 0;
             color: #000;
         }
+
         .publication-details .authors {
             font-size: 0.95em;
             margin: 0 0 0.2rem 0;
         }
+
         .publication-details .conference {
             font-size: 0.95em;
-            margin: 0 0 0.8rem 0;
+            margin: 0 0 0.5rem 0;
         }
+
+        .publication-details .description {
+            font-size: 0.95em;
+            color: #444;
+            margin: 0.3rem 0 0.8rem 0;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.85em;
+            padding: 2px 8px;
+            border: 1px solid #ddd;
+            border-radius: 999px;
+            background-color: #f7f7f7;
+            color: #555;
+            margin-bottom: 6px;
+        }
+
         .publication-links a.btn {
             display: inline-block;
             font-size: 0.9em;
@@ -135,22 +161,42 @@
             margin-right: 8px;
             transition: background-color 0.2s, border-color 0.2s;
         }
+
         .publication-links a.btn:hover {
             background-color: #e9e9e9;
             border-color: #ccc;
         }
-        
+
         .paper { margin-bottom: 1rem; }
         .paper .title { font-size: 1.1em; margin-bottom: 0.2rem; font-weight: bold; }
         .paper p { margin: 0.1rem 0; }
         .paper i { color: #555; }
+
+        @media (max-width: 650px) {
+            .publication-entry {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .publication-image,
+            .publication-details {
+                flex-basis: 100%;
+            }
+
+            .paper .title span {
+                float: none !important;
+                display: block;
+                margin-top: 2px;
+            }
+        }
     </style>
 </head>
+
 <body>
     <header>
         <div class="profile-container">
-            <img src="IMG_3147.png" alt="Jiin Im" 
-                 oncontextmenu="return false" 
+            <img src="IMG_3147.png" alt="Jiin Im"
+                 oncontextmenu="return false"
                  ondragstart="return false">
         </div>
 
@@ -171,31 +217,31 @@
                 This direction is motivated by real-world perception problems where appearance alone is insufficient: recognizing that two visually different objects share the same functional part, or generalizing manipulation skills across unseen environments. I believe spatial understanding grounded in correspondence is a key building block for such capabilities.
             </p>
             <p>
-                I am <strong>actively seeking Ph.D. opportunities starting in Fall 2027</strong>. 
-                If you are interested in discussing my research or potential collaborations, 
+                I am <strong>actively seeking Ph.D. opportunities starting in Fall 2027</strong>.
+                If you are interested in discussing my research or potential collaborations,
                 I'd love to grab a coffee at <strong>CVPR 2026</strong> in Denver or chat over email! ☕
             </p>
         </section>
 
         <section id="education">
             <h2>Education</h2>
-            
+
             <div class="paper">
-                <p class="title">Hanyang University 
+                <p class="title">Hanyang University
                     <span style="float:right; color: #3ca8fd; font-style: italic;">Mar. 2026 - Present</span>
                 </p>
                 <p>Research Assistant (Advisor: <a href="https://scholar.google.com/citations?user=7axCcBkAAAAJ&hl=en" target="_blank">Je Hyeong Hong</a>)</p>
             </div>
 
             <div class="paper">
-                <p class="title">Hanyang University 
+                <p class="title">Hanyang University
                     <span style="float:right; color: #3ca8fd; font-style: italic;">Mar. 2024 - Feb. 2026</span>
                 </p>
                 <p>M.S. in Electronic Engineering (Advisor: <a href="https://scholar.google.com/citations?user=7axCcBkAAAAJ&hl=en" target="_blank">Je Hyeong Hong</a>)</p>
             </div>
 
             <div class="paper">
-                <p class="title">Hanyang University 
+                <p class="title">Hanyang University
                     <span style="float:right; color: #3ca8fd; font-style: italic;">Mar. 2020 - Feb. 2024</span>
                 </p>
                 <p>B.S. in Electronic Engineering, <i>Summa Cum Laude</i></p>
@@ -204,7 +250,18 @@
 
         <section id="publications">
             <h2>Publications</h2>
-            
+
+            <div class="publication-entry">
+                <div class="publication-image">
+                    <img src="under-review-teaser.png" alt="Chebyshev Differential Flows Teaser Image">
+                </div>
+                <div class="publication-details">
+                    <p class="title">Chebyshev Differential Flows for Shape Matching and Interpolation</p>
+                    <p class="authors"><u><strong>Jiin Im</strong></u>, Sisung Liu, Je Hyeong Hong</p>
+                    <p class="conference"><i>Under review</i></p>
+                </div>
+            </div>
+
             <div class="publication-entry">
                 <div class="publication-image">
                     <img src="shape-of-you.png" alt="Shape-of-You Teaser Image">
@@ -235,10 +292,10 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="projects">
             <h2>Projects</h2>
-            
+
             <div class="paper">
                 <p class="title">
                     Semantic Correspondence via Structural Information on 2D and 3D Domains
@@ -279,7 +336,7 @@
                 </p>
             </div>
         </section>
-        
+
         <section id="experience">
             <h2>Experience</h2>
             <ul>
@@ -287,7 +344,7 @@
                     <strong>Academic Service (Reviewer)</strong> <br>
                     3DV (2026)
                 </li>
-                
+
                 <li style="margin-top: 10px;">
                     <strong>External Reviewer</strong> <br>
                     CVPR (2024, 2025), ICCV (2025), ICASSP (2025), AAAI (2024), BMVC (2024), ICIP (2023)
