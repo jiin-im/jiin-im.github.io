@@ -20,14 +20,21 @@
     <style>
         body {
             font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: white;
-            color: #000;
-            font-variant-numeric: lining-nums;
-            font-feature-settings: 'lnum';
+            font-size: 13px;
+            line-height: 1.55;
+        }
+
+        h1 {
+            margin-bottom: 0;
+            font-size: 32px;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 22px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 7px;
+            margin-top: 15px;
         }
 
         header, main {
@@ -36,7 +43,9 @@
             padding: 15px;
         }
 
-        header { text-align: center; }
+        header {
+            text-align: center;
+        }
 
         section {
             background-color: white;
@@ -49,27 +58,31 @@
             font-weight: 400;
         }
 
-        h1 {
-            margin-bottom: 0;
-            font-size: 38px;
-            letter-spacing: -0.5px;
+        a {
+            color: #3ca8fd;
+            text-decoration: none;
         }
 
-        h2 {
-            font-size: 27px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 8px;
-            margin-top: 15px;
+        a:hover {
+            text-decoration: underline;
         }
 
-        a { color: #3ca8fd; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+        }
 
-        footer { text-align: center; padding: 20px; color: #777; }
-        p { margin: 0 0 1em 0; }
-        ul { margin-top: 0.5em; }
+        p {
+            margin: 0 0 1em 0;
+        }
+
+        ul {
+            margin-top: 0.5em;
+        }
 
         /* --- Profile Image Styling --- */
+
         .profile-container {
             width: 175px;
             height: 175px;
@@ -94,6 +107,7 @@
         }
 
         /* --- Publication Styling --- */
+
         .publication-entry {
             display: flex;
             align-items: flex-start;
@@ -102,7 +116,7 @@
         }
 
         .publication-image {
-            flex-basis: 35%;
+            flex-basis: 20%;
             flex-shrink: 0;
         }
 
@@ -167,10 +181,23 @@
             border-color: #ccc;
         }
 
-        .paper { margin-bottom: 1rem; }
-        .paper .title { font-size: 1.1em; margin-bottom: 0.2rem; font-weight: bold; }
-        .paper p { margin: 0.1rem 0; }
-        .paper i { color: #555; }
+        .paper {
+            margin-bottom: 1rem;
+        }
+
+        .paper .title {
+            font-size: 1.1em;
+            margin-bottom: 0.2rem;
+            font-weight: bold;
+        }
+
+        .paper p {
+            margin: 0.1rem 0;
+        }
+
+        .paper i {
+            color: #555;
+        }
 
         @media (max-width: 650px) {
             .publication-entry {
@@ -189,202 +216,390 @@
                 margin-top: 2px;
             }
         }
+        /* --- Education & Experience Styling --- */
+
+        .education-entry {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        .education-logo {
+            width: 65px;
+            flex: 0 0 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .education-logo img {
+            width: auto;
+            height: auto;
+            max-width: 60px;
+            max-height: 55px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .education-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .education-details p {
+            margin: 0.1rem 0;
+        }
+
+        .education-details .title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 0.2rem;
+        }
+
+        @media (max-width: 650px) {
+            .education-entry {
+                gap: 12px;
+            }
+
+            .education-logo {
+                width: 42px;
+                flex-basis: 42px;
+            }
+
+            .education-logo img {
+                max-width: 38px;
+                max-height: 34px;
+            }
+
+            .education-details .title span {
+                float: none !important;
+                display: block;
+                margin-top: 2px;
+            }
+        }
     </style>
 </head>
 
 <body>
+
     <header>
         <div class="profile-container">
-            <img src="IMG_3147.png" alt="Jiin Im"
-                 oncontextmenu="return false"
-                 ondragstart="return false">
+            <img src="IMG_3147.png"
+                alt="Jiin Im"
+                oncontextmenu="return false"
+                ondragstart="return false">
         </div>
 
         <h1>Jiin Im</h1>
-        <p>Research Assistant @ <a href="https://sail.hanyang.ac.kr/" target="_blank">Spatial AI Lab</a>, Hanyang University</p>
+
+        <p style="margin-bottom: 6px;">
+            Research Assistant @
+            <a href="https://sail.hanyang.ac.kr/" target="_blank">
+                Spatial AI Lab
+            </a>,
+            Hanyang University
+        </p>
+
+        <p class="header-links">
+            <a href="mailto:2oij11nn@gmail.com">Email</a>
+            <span>/</span>
+            <a href="https://scholar.google.com/citations?user=bd-VFKsAAAAJ&hl=en" target="_blank">Google Scholar</a>
+            <span>/</span>
+            <a href="https://www.linkedin.com/in/jiin-im-26647b353" target="_blank">LinkedIn</a>
+            <span>/</span>
+            <a href="https://github.com/i-m-jiin" target="_blank">GitHub</a>
+            <!-- <span>/</span>
+            <a href="Jiin_Im_CV.pdf" target="_blank">CV</a> -->
+        </p>
     </header>
 
     <main>
+
+        <!-- =====================================================
+             About
+             ===================================================== -->
+
         <section id="about">
             <h2>About</h2>
+
             <p>
-                I am a Research Assistant at the <a href="https://sail.hanyang.ac.kr/" target="_blank">Spatial AI Lab</a>, Hanyang University, advised by <a href="https://scholar.google.com/citations?user=7axCcBkAAAAJ&hl=en" target="_blank">Prof. Je Hyeong Hong</a>. My research focuses on spatial and geometric understanding in computer vision and graphics. I am particularly interested in how visual systems discover and represent structure across images, objects, and 3D shapes, with experience in correspondence, shape analysis, and geometry-aware representation learning.
+                I am a Research Assistant at the
+                <a href="https://sail.hanyang.ac.kr/" target="_blank">Spatial AI Lab</a>,
+                Hanyang University, advised by
+                <a href="https://scholar.google.com/citations?user=7axCcBkAAAAJ&hl=en"
+                   target="_blank">Prof. Je Hyeong Hong</a>.
             </p>
+
             <p>
-                My current work studies correspondence as a way to reason about relational structure across visual and geometric data. I have explored both image-level and shape-level matching, investigating how geometric constraints can ground feature correspondence beyond surface appearance, and how consistent maps can reveal spatial and functional relationships between parts, objects, and shapes.
+                My research interests center on understanding the dynamic 3D world. 
+                I am interested in how visual systems can go beyond a static snapshot and reason about the structure of a scene over time. 
+                In particular, I want to study representations that connect observations across time and capture meaningful changes in the underlying 3D world.
             </p>
+
             <p>
-                I aim to extend this direction toward scene-level spatial reasoning and 3D representation learning more broadly. Correspondence offers a natural lens for understanding what structure transfers across instances and environments. I believe that representing and preserving geometric, physical, and topological priors is central to learning, generation, and generalization in 3D.
+                Looking forward, I hope to explore 4D scene understanding as a step toward visual systems that can build a coherent understanding of the physical world from what they observe.
             </p>
+
             <p>
-                I am <strong>actively seeking Ph.D. opportunities starting in Fall 2027</strong>.
-                I would be very happy to discuss my research interests or potential collaborations over email or a brief Zoom call! ☕
+                I will be attending <strong>NeurIPS 2026</strong>.
+                If you would like to chat about research, feel free to reach out.
+                I would be happy to grab a coffee! ☕
             </p>
         </section>
 
-        <section id="education">
-            <h2>Education</h2>
 
-            <div class="paper">
-                <p class="title">Hanyang University
-                    <span style="float:right; color: #3ca8fd; font-style: italic;">Mar. 2026 - Present</span>
-                </p>
-                <p>Research Assistant (Advisor: <a href="https://scholar.google.com/citations?user=7axCcBkAAAAJ&hl=en" target="_blank">Je Hyeong Hong</a>)</p>
-            </div>
+        <!-- =====================================================
+             Education & Experience
+             ===================================================== -->
 
-            <div class="paper">
-                <p class="title">Hanyang University
-                    <span style="float:right; color: #3ca8fd; font-style: italic;">Mar. 2024 - Feb. 2026</span>
-                </p>
-                <p>M.S. in Electronic Engineering (Advisor: <a href="https://scholar.google.com/citations?user=7axCcBkAAAAJ&hl=en" target="_blank">Je Hyeong Hong</a>)</p>
-            </div>
+<section id="education">
+    <h2>Education & Experience</h2>
 
-            <div class="paper">
-                <p class="title">Hanyang University
-                    <span style="float:right; color: #3ca8fd; font-style: italic;">Mar. 2020 - Feb. 2024</span>
-                </p>
-                <p>B.S. in Electronic Engineering, <i>Summa Cum Laude</i></p>
-            </div>
-        </section>
+    <!-- Research Assistant -->
+    <div class="education-entry">
+        <div class="education-logo">
+            <img src="HYU_symbol_basic.png" alt="Hanyang University Logo">
+        </div>
+
+        <div class="education-details">
+            <p class="title">
+                Hanyang University
+                <span style="float:right; color:#3ca8fd; font-style:italic;">
+                    Mar. 2026 - Present
+                </span>
+            </p>
+
+            <p>
+                Research Assistant
+                (Advisor:
+                <a href="https://scholar.google.com/citations?user=7axCcBkAAAAJ&hl=en"
+                   target="_blank">Je Hyeong Hong</a>)
+            </p>
+        </div>
+    </div>
+
+
+    <!-- M.S. -->
+    <div class="education-entry">
+        <div class="education-logo">
+            <img src="HYU_symbol_basic.png" alt="Hanyang University Logo">
+        </div>
+
+        <div class="education-details">
+            <p class="title">
+                Hanyang University
+                <span style="float:right; color:#3ca8fd; font-style:italic;">
+                    Mar. 2024 - Feb. 2026
+                </span>
+            </p>
+
+            <p>
+                M.S. in Electronic Engineering
+                (Advisor:
+                <a href="https://scholar.google.com/citations?user=7axCcBkAAAAJ&hl=en"
+                   target="_blank">Je Hyeong Hong</a>)
+            </p>
+        </div>
+    </div>
+
+
+    <!-- B.S. -->
+    <div class="education-entry">
+        <div class="education-logo">
+            <img src="HYU_symbol_basic.png" alt="Hanyang University Logo">
+        </div>
+
+        <div class="education-details">
+            <p class="title">
+                Hanyang University
+                <span style="float:right; color:#3ca8fd; font-style:italic;">
+                    Mar. 2020 - Feb. 2024
+                </span>
+            </p>
+
+            <p>
+                B.S. in Electronic Engineering,
+                <i>Summa Cum Laude</i>
+            </p>
+        </div>
+    </div>
+
+
+    <!-- KIST -->
+    <div class="education-entry">
+        <div class="education-logo">
+            <img src="KIST_Logo.jpg" alt="KIST Logo">
+        </div>
+
+        <div class="education-details">
+            <p class="title">
+                Intelligent Robotics Research Center, KIST
+                <span style="float:right; color:#3ca8fd; font-style:italic;">
+                    Jun. 2022 - Aug. 2022
+                </span>
+            </p>
+
+            <p>Undergraduate Researcher</p>
+
+            <p>
+                <small>
+                    Worked under the supervision of
+                    <a href="https://scholar.google.co.uk/citations?user=xlNXvLEAAAAJ&hl=en&oi=ao"
+                       target="_blank">Dr. Yoonseob Lim</a>
+                </small>
+            </p>
+        </div>
+    </div>
+
+</section>
+
+
+        <!-- =====================================================
+             Publications
+             ===================================================== -->
 
         <section id="publications">
             <h2>Publications</h2>
 
-            <div class="publication-entry">
-                <div class="publication-image">
-                    <img src="under-review-teaser.png" alt="Chebyshev Differential Flows Teaser Image">
-                </div>
-                <div class="publication-details">
-                    <p class="title">Chebyshev Differential Flows for Shape Matching and Interpolation</p>
-                    <p class="authors"><u><strong>Jiin Im</strong></u>, Sisung Liu, Je Hyeong Hong</p>
-                    <p class="conference"><i>Under review</i></p>
-                </div>
-            </div>
+            <!-- Chef -->
 
             <div class="publication-entry">
                 <div class="publication-image">
-                    <img src="shape-of-you.png" alt="Shape-of-You Teaser Image">
+                    <img src="under-review-teaser.png"
+                         alt="Chebyshev Differential Flows Teaser Image">
                 </div>
+
                 <div class="publication-details">
-                    <p class="title">Shape-of-You: Fused Gromov-Wasserstein Optimal Transport for Semantic Correspondence in-the-Wild</p>
-                    <p class="authors"><u><strong>Jiin Im</strong></u>, Sisung Liu, Je Hyeong Hong</p>
-                    <p class="conference"><i>CVPR 2026</i></p>
+                    <p class="title">
+                        Chebyshev Differential Flows for Shape Matching and Interpolation
+                    </p>
+
+                    <p class="authors">
+                        <u><strong>Jiin Im</strong></u>,
+                        Sisung Liu,
+                        Je Hyeong Hong
+                    </p>
+
+                    <p class="conference">
+                        <i>NeurIPS 2026</i>
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- Shape-of-You -->
+
+            <div class="publication-entry">
+                <div class="publication-image">
+                    <img src="shape-of-you.png"
+                         alt="Shape-of-You Teaser Image">
+                </div>
+
+                <div class="publication-details">
+                    <p class="title">
+                        Shape-of-You: Fused Gromov-Wasserstein Optimal Transport
+                        for Semantic Correspondence in-the-Wild
+                    </p>
+
+                    <p class="authors">
+                        <u><strong>Jiin Im</strong></u>,
+                        Sisung Liu,
+                        Je Hyeong Hong
+                    </p>
+
+                    <p class="conference">
+                        <i>CVPR 2026</i>
+                    </p>
+
                     <div class="publication-links">
-                        <a href="https://arxiv.org/pdf/2603.11618" class="btn" target="_blank">Paper</a>
-                        <a href="https://github.com/SpatialAILab/shapeofyou" class="btn" target="_blank">Code</a>
+                        <a href="https://arxiv.org/pdf/2603.11618"
+                           class="btn"
+                           target="_blank">
+                            Paper
+                        </a>
+
+                        <a href="https://github.com/SpatialAILab/shapeofyou"
+                           class="btn"
+                           target="_blank">
+                            Code
+                        </a>
                     </div>
                 </div>
             </div>
 
+
+            <!-- FUN-AD -->
+
             <div class="publication-entry">
                 <div class="publication-image">
-                    <img src="figure-placeholder.png" alt="FUN-AD Teaser Image">
+                    <img src="figure-placeholder.png"
+                         alt="FUN-AD Teaser Image">
                 </div>
+
                 <div class="publication-details">
-                    <p class="title">FUN-AD: Fully Unsupervised Learning for Anomaly Detection with Noisy Training Data</p>
-                    <p class="authors"><u><strong>Jiin Im</strong></u>*, Yongho Son*, Je Hyeong Hong</p>
-                    <p class="conference"><i>WACV 2025</i></p>
+                    <p class="title">
+                        FUN-AD: Fully Unsupervised Learning for Anomaly Detection
+                        with Noisy Training Data
+                    </p>
+
+                    <p class="authors">
+                        <u><strong>Jiin Im</strong></u>*,
+                        Yongho Son*,
+                        Je Hyeong Hong
+                    </p>
+
+                    <p class="conference">
+                        <i>WACV 2025</i>
+                    </p>
+
                     <div class="publication-links">
-                        <a href="https://openaccess.thecvf.com/content/WACV2025/papers/Im_FUN-AD_Fully_Unsupervised_Learning_for_Anomaly_Detection_with_Noisy_Training_WACV_2025_paper.pdf" class="btn" target="_blank">Paper</a>
-                        <a href="https://github.com/SpatialAILab/FUNAD" class="btn" target="_blank">Code</a>
+                        <a href="https://openaccess.thecvf.com/content/WACV2025/papers/Im_FUN-AD_Fully_Unsupervised_Learning_for_Anomaly_Detection_with_Noisy_Training_WACV_2025_paper.pdf"
+                           class="btn"
+                           target="_blank">
+                            Paper
+                        </a>
+
+                        <a href="https://github.com/SpatialAILab/FUNAD"
+                           class="btn"
+                           target="_blank">
+                            Code
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-
-            <div class="paper">
-                <p class="title">
-                    Semantic Correspondence via Structural Information on 2D and 3D Domains
-                    <span style="float:right; font-size:0.9em; color: #3ca8fd; font-style: italic;">Mar. 2025 - Present</span>
-                </p>
-                <p>
-                    Establishing semantic correspondence on both 2D image and 3D geometry domains using structural information, which is related to <i>Shape-of-You</i>.
-                </p>
-            </div>
-
-            <div class="paper">
-                <p class="title">
-                    Non-Rigid Registration of Deformed Point Clouds via Geometric Correspondence
-                    <span style="float:right; font-size:0.9em; color: #3ca8fd; font-style: italic;">Jun. 2025 - Dec. 2025</span>
-                </p>
-                <p>
-                    Focused on estimating geometric correspondence in deformed point clouds to perform robust non-rigid registration.
-                </p>
-            </div>
-
-            <div class="paper">
-                <p class="title">
-                    Privacy-Preserving Geometric Description against Image Reconstruction
-                    <span style="float:right; font-size:0.9em; color: #3ca8fd; font-style: italic;">Jun. 2024 - Feb. 2025</span>
-                </p>
-                <p>
-                    Explored geometric description methods that prevent original image recovery from descriptors while maintaining matching performance.
-                </p>
-            </div>
-
-            <div class="paper">
-                <p class="title">
-                    Unsupervised Anomaly Detection with Noisy Training Data
-                    <span style="float:right; font-size:0.9em; color: #3ca8fd; font-style: italic;">Jan. 2023 - May. 2024</span>
-                </p>
-                <p>
-                    Addressing anomaly detection in unsupervised settings with noisy training data related to FUN-AD.
-                </p>
-            </div>
-        </section>
 
         <section id="academic-service">
             <h2>Academic Service</h2>
-            <ul>
-                <li>
-                    <strong>Reviewer</strong> <br>
-                    NeurIPS (2026), 3DV (2026)
-                </li>
-        
-                <li style="margin-top: 10px;">
-                    <strong>External Reviewer</strong> <br>
-                    CVPR (2024, 2025), ICCV (2025), ICASSP (2025), AAAI (2024), BMVC (2024), ICIP (2023)
-                </li>
-            </ul>
-        </section>
 
-        <section id="experience">
-            <h2>Experience</h2>
-            <ul>
-                <li>
-                    <strong>Undergraduate Researcher</strong> <br>
-                    Intelligent Robotics Research Center, KIST (2022.06 – 2022.08) <br>
-                    <small>Worked under the supervision of <a href="https://scholar.google.co.uk/citations?user=xlNXvLEAAAAJ&hl=en&oi=ao" target="_blank">Dr. Yoonseob Lim</a></small>
-                </li>
-            </ul>
-        </section>
-
-        <section id="hobbies">
-            <h2>Hobbies</h2>
-            <p>In my free time, I enjoy:</p>
-            <ul>
-                <li>⚾ Watching baseball</li>
-                <li>🔥 Supporting the KBO League team: 🐯 KIA Tigers</li>
-                <li>🎵 Listening to music 🎸</li>
-            </ul>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>✉️ Email: <a href="mailto:skqldit33@hanyang.ac.kr">skqldit33@hanyang.ac.kr</a></p>
-            <p>📍 Location:
-                <a href="https://maps.app.goo.gl/bUTmLmKb5GnFjvp79" target="_blank">
-                    Engineering Center Annex Unit 415-1, Hanyang University, Seongdong-gu, Wangsimni-ro 222, Seoul, South Korea
-                </a>
+            <p>
+                <strong>Reviewer:</strong> NeurIPS 2026; 3DV 2026, 2027<br>
+                <strong>External Reviewer:</strong> CVPR 2024, 2025; ICCV 2025; ICASSP 2025;
+                AAAI 2024; BMVC 2024; ICIP 2023
             </p>
         </section>
+
+
+        <!-- =====================================================
+             Outside Research
+            ===================================================== -->
+        <section id="outside-research">
+            <h2>Outside Research</h2>
+
+            <p>
+                Outside the lab, I enjoy watching baseball ⚾ both on TV and at the ballpark.
+                I'm a KIA Tigers fan 🐯. I also love going to concerts and live performances 🎸.
+            </p>
+        </section>
+
     </main>
+
 
     <footer>
         <p>© 2026 Jiin Im</p>
     </footer>
+
 </body>
 </html>
